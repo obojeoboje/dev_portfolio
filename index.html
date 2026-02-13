@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Александр Привалов — Разработка с ИИ</title>
+  <meta name="description" content="Разработка Telegram-ботов, сайтов и автоматизации с использованием нейросетей. Быстрее. Качественнее. Любой сложности.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="#hero" class="nav__logo">AP<span class="accent">.</span></a>
+      <button class="nav__burger" id="burger" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#cases">Кейсы</a></li>
+        <li><a href="#process">Как работаю</a></li>
+        <li><a href="#contacts" class="nav__cta">Написать</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero__grid-bg"></div>
+    <div class="hero__glow"></div>
+    <div class="container hero__content">
+      <p class="hero__tag fade-up">Fullstack-разработчик &middot; ИИ-интеграции</p>
+      <h1 class="hero__title fade-up">
+        Александр<br>Привалов
+      </h1>
+      <p class="hero__subtitle fade-up">
+        Разрабатываю с&nbsp;ИИ. <span class="accent">Быстрее.</span> Качественнее. Любой&nbsp;сложности.
+      </p>
+      <p class="hero__description fade-up">
+        Использую нейросети на каждом этапе разработки&nbsp;&mdash; от&nbsp;проектирования до&nbsp;тестирования.
+        Это позволяет создавать продукты <strong>в&nbsp;2&ndash;3 раза быстрее</strong> без потери качества.
+        Боты, сайты, автоматизация&nbsp;&mdash; любая задача.
+      </p>
+      <div class="hero__actions fade-up">
+        <a href="#contacts" class="btn btn--primary">Обсудить проект</a>
+        <a href="#cases" class="btn btn--ghost">Смотреть кейсы</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="section-title fade-up">Что я делаю</h2>
+      <p class="section-subtitle fade-up">Три направления, в которых ИИ даёт максимальный результат</p>
+
+      <div class="services__grid">
+
+        <!-- Service 1 -->
+        <div class="card fade-up">
+          <div class="card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/>
+              <path d="M10 21h4"/>
+              <path d="M12 18v3"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Telegram-боты и чат-боты с&nbsp;ИИ</h3>
+          <p class="card__text">
+            Умные боты, которые ведут диалог как живой оператор. Приём заказов, консультации, HR-помощники, боты для обучения.
+            Интеграция с&nbsp;GPT, базами знаний и&nbsp;CRM.
+          </p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="card fade-up">
+          <div class="card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8"/>
+              <path d="M12 17v4"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Веб-разработка</h3>
+          <p class="card__text">
+            Лендинги, корпоративные сайты, интернет-магазины. Современный стек, адаптивный дизайн,
+            интеграция с&nbsp;платёжными системами и&nbsp;CRM. Доработка существующих сайтов.
+          </p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="card fade-up">
+          <div class="card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Автоматизация бизнес-процессов</h3>
+          <p class="card__text">
+            Интеграции API, CRM, парсинг данных, автоматические отчёты.
+            n8n-пайплайны, генерация контента через ИИ, мониторинг и&nbsp;аналитика.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Tech badges -->
+      <div class="tech-badges fade-up">
+        <span class="badge">Python</span>
+        <span class="badge">OpenAI</span>
+        <span class="badge">Telegram API</span>
+        <span class="badge">React</span>
+        <span class="badge">Next.js</span>
+        <span class="badge">Node.js</span>
+        <span class="badge">TypeScript</span>
+        <span class="badge">PostgreSQL</span>
+        <span class="badge">Docker</span>
+        <span class="badge">LangChain</span>
+        <span class="badge">FastAPI</span>
+        <span class="badge">n8n</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CASES ===== -->
+  <section class="cases" id="cases">
+    <div class="container">
+      <h2 class="section-title fade-up">Кейсы</h2>
+      <p class="section-subtitle fade-up">Проекты, которые решили реальные задачи бизнеса</p>
+
+      <div class="cases__grid">
+
+        <!-- Case 1 -->
+        <article class="case fade-up">
+          <div class="case__header">
+            <span class="case__number">01</span>
+            <span class="case__category">Telegram-бот + ИИ</span>
+          </div>
+          <h3 class="case__title">ИИ-бот для цветочного магазина &laquo;Flora&nbsp;Express&raquo;</h3>
+          <div class="case__meta">
+            <span>Москва</span>
+            <span class="case__dot"></span>
+            <span>Сеть из 5 магазинов</span>
+          </div>
+          <div class="case__body">
+            <div class="case__block">
+              <h4>Задача</h4>
+              <p>Автоматизировать приём заказов и&nbsp;консультации в&nbsp;Telegram. Менеджеры не&nbsp;успевали отвечать&nbsp;&mdash; клиенты уходили к&nbsp;конкурентам.</p>
+            </div>
+            <div class="case__block">
+              <h4>Решение</h4>
+              <p>Telegram-бот на&nbsp;GPT, который ведёт диалог, помогает выбрать букет по&nbsp;поводу и&nbsp;бюджету, оформляет заказ и&nbsp;передаёт данные в&nbsp;CRM. Менеджер подключается только для сложных случаев.</p>
+            </div>
+            <div class="case__block">
+              <h4>Результат</h4>
+              <ul class="case__results">
+                <li><strong>73%</strong> обращений закрывает бот без менеджера</li>
+                <li>Время отклика: <strong>15 мин &rarr; 8 секунд</strong></li>
+                <li>Выручка через бота: <strong>+340 000 руб/мес</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="case__stack">
+            <span>Python</span>
+            <span>aiogram 3</span>
+            <span>OpenAI GPT-4o-mini</span>
+            <span>PostgreSQL</span>
+            <span>Redis</span>
+          </div>
+        </article>
+
+        <!-- Case 2 -->
+        <article class="case fade-up">
+          <div class="case__header">
+            <span class="case__number">02</span>
+            <span class="case__category">Веб-разработка</span>
+          </div>
+          <h3 class="case__title">Лендинг + CRM-интеграция для студии йоги &laquo;Asana&nbsp;Space&raquo;</h3>
+          <div class="case__meta">
+            <span>Санкт-Петербург</span>
+            <span class="case__dot"></span>
+            <span>3 студии</span>
+          </div>
+          <div class="case__body">
+            <div class="case__block">
+              <h4>Задача</h4>
+              <p>Заменить устаревший сайт на&nbsp;Tilda. Добавить онлайн-запись на&nbsp;занятия, подключить оплату, синхронизировать с&nbsp;amoCRM.</p>
+            </div>
+            <div class="case__block">
+              <h4>Решение</h4>
+              <p>Быстрый современный лендинг с&nbsp;расписанием, онлайн-записью, интеграцией с&nbsp;ЮKassa и&nbsp;amoCRM. Автоматические напоминания клиентам в&nbsp;Telegram.</p>
+            </div>
+            <div class="case__block">
+              <h4>Результат</h4>
+              <ul class="case__results">
+                <li>Конверсия: <strong>2.1% &rarr; 5.8%</strong></li>
+                <li><strong>40%</strong> записей теперь онлайн</li>
+                <li>Скорость загрузки: <strong>0.8 сек</strong> (было 4.2 сек)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="case__stack">
+            <span>Next.js</span>
+            <span>TypeScript</span>
+            <span>Tailwind CSS</span>
+            <span>ЮKassa API</span>
+            <span>amoCRM API</span>
+          </div>
+        </article>
+
+        <!-- Case 3 -->
+        <article class="case fade-up">
+          <div class="case__header">
+            <span class="case__number">03</span>
+            <span class="case__category">Автоматизация</span>
+          </div>
+          <h3 class="case__title">Система автоматизации для селлера Wildberries</h3>
+          <div class="case__meta">
+            <span>Удалённо</span>
+            <span class="case__dot"></span>
+            <span>Оборот 3 млн руб/мес, 1200 SKU</span>
+          </div>
+          <div class="case__body">
+            <div class="case__block">
+              <h4>Задача</h4>
+              <p>Селлер тратил 30+ часов в&nbsp;неделю на&nbsp;ручное обновление цен, отслеживание остатков и&nbsp;создание карточек товаров.</p>
+            </div>
+            <div class="case__block">
+              <h4>Решение</h4>
+              <p>Парсер цен конкурентов + автоматическое обновление цен по&nbsp;заданным правилам. Генерация описаний и&nbsp;инфографики для карточек через ИИ. Дашборд с&nbsp;аналитикой.</p>
+            </div>
+            <div class="case__block">
+              <h4>Результат</h4>
+              <ul class="case__results">
+                <li>Экономия <strong>25 часов в неделю</strong></li>
+                <li>Рост выручки: <strong>+18%</strong> за счёт динамического ценообразования</li>
+                <li>Карточки товаров создаются за <strong>2 минуты</strong> вместо 40</li>
+              </ul>
+            </div>
+          </div>
+          <div class="case__stack">
+            <span>Python</span>
+            <span>Wildberries API</span>
+            <span>OpenAI</span>
+            <span>Pillow</span>
+            <span>PostgreSQL</span>
+            <span>APScheduler</span>
+          </div>
+        </article>
+
+        <!-- Case 4 -->
+        <article class="case fade-up">
+          <div class="case__header">
+            <span class="case__number">04</span>
+            <span class="case__category">ИИ-бот + RAG</span>
+          </div>
+          <h3 class="case__title">HR-бот для IT-компании &laquo;DevTeam&nbsp;Solutions&raquo;</h3>
+          <div class="case__meta">
+            <span>Удалённо</span>
+            <span class="case__dot"></span>
+            <span>IT-аутсорс, 80 сотрудников</span>
+          </div>
+          <div class="case__body">
+            <div class="case__block">
+              <h4>Задача</h4>
+              <p>HR-отдел тонул в&nbsp;однотипных вопросах: отпуска, больничные, политики компании, онбординг. Нужно было разгрузить людей, не&nbsp;потеряв качество ответов.</p>
+            </div>
+            <div class="case__block">
+              <h4>Решение</h4>
+              <p>Telegram-бот с&nbsp;RAG (Retrieval-Augmented Generation): загружены внутренние документы, регламенты и&nbsp;FAQ. Бот находит релевантный фрагмент и&nbsp;формирует точный ответ.</p>
+            </div>
+            <div class="case__block">
+              <h4>Результат</h4>
+              <ul class="case__results">
+                <li><strong>85%</strong> типовых вопросов закрывает бот</li>
+                <li>HR-отдел высвободил <strong>15 часов в&nbsp;неделю</strong></li>
+                <li>Удовлетворённость сотрудников: <strong>4.7/5</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="case__stack">
+            <span>Python</span>
+            <span>aiogram</span>
+            <span>LangChain</span>
+            <span>ChromaDB</span>
+            <span>OpenAI Embeddings</span>
+            <span>Docker</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="process" id="process">
+    <div class="container">
+      <h2 class="section-title fade-up">Как я работаю</h2>
+      <p class="section-subtitle fade-up">От идеи до готового продукта — 4 простых шага</p>
+
+      <div class="process__grid">
+
+        <div class="process__step fade-up">
+          <div class="process__number">01</div>
+          <h3>Обсуждаем задачу</h3>
+          <p>Бесплатная консультация. Разбираю вашу задачу, предлагаю варианты, оцениваю сроки и&nbsp;бюджет.</p>
+        </div>
+
+        <div class="process__step fade-up">
+          <div class="process__number">02</div>
+          <h3>Предлагаю решение</h3>
+          <p>Готовлю краткое ТЗ с&nbsp;описанием решения, стеком технологий и&nbsp;этапами. Согласовываем и&nbsp;стартуем.</p>
+        </div>
+
+        <div class="process__step fade-up">
+          <div class="process__number">03</div>
+          <h3>Разрабатываю</h3>
+          <p>Показываю промежуточные результаты. Вы видите прогресс и&nbsp;можете корректировать на&nbsp;ходу.</p>
+        </div>
+
+        <div class="process__step fade-up">
+          <div class="process__number">04</div>
+          <h3>Сдаю + поддержка</h3>
+          <p>Передаю готовый проект, инструкции и&nbsp;доступы. Поддержка 14&nbsp;дней после сдачи бесплатно.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTS ===== -->
+  <section class="contacts" id="contacts">
+    <div class="container">
+      <h2 class="section-title fade-up">Давайте обсудим ваш проект</h2>
+      <p class="section-subtitle fade-up">Первая консультация бесплатно. Напишите&nbsp;&mdash; отвечу в&nbsp;течение часа.</p>
+
+      <div class="contacts__buttons fade-up">
+        <a href="https://t.me/Neznayuusername" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+          </svg>
+          Написать в Telegram
+        </a>
+        <a href="mailto:obojealexanderwork@gmail.com" class="btn btn--ghost btn--lg">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+          Написать на Email
+        </a>
+      </div>
+
+      <div class="contacts__info fade-up">
+        <p>Telegram: <a href="https://t.me/Neznayuusername" target="_blank" rel="noopener">@Neznayuusername</a></p>
+        <p>Email: <a href="mailto:obojealexanderwork@gmail.com">obojealexanderwork@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025&ndash;2026 Александр Привалов. Разработка с&nbsp;ИИ.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
