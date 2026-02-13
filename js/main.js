@@ -176,6 +176,88 @@
   }
 
   // ==============================
+  // Analytics: Section Views
+  // ==============================
+
+  function initSectionTracking() {
+    const sections = document.querySelectorAll('section[id]');
+    if (!sections.length || typeof gtag !== 'function') return;
+
+    const tracked = new Set();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            if (!tracked.has(id)) {
+              tracked.add(id);
+              gtag('event', 'section_view', {
+                section_name: id,
+              });
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  }
+
+  // ==============================
+  // Analytics: CTA Clicks
+  // ==============================
+
+  function initCTATracking() {
+    if (typeof gtag !== 'function') return;
+
+    // Telegram button clicks
+    document.querySelectorAll('a[href*="t.me"]').forEach((link) => {
+      link.addEventListener('click', () => {
+        gtag('event', 'cta_click', {
+          cta_type: 'telegram',
+          cta_location: link.closest('section')?.id || 'nav',
+        });
+      });
+    });
+
+    // Email button clicks
+    document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
+      link.addEventListener('click', () => {
+        gtag('event', 'cta_click', {
+          cta_type: 'email',
+          cta_location: link.closest('section')?.id || 'unknown',
+        });
+      });
+    });
+
+    // Hero CTA buttons
+    document.querySelectorAll('.hero__actions .btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const label = btn.textContent.trim();
+        gtag('event', 'cta_click', {
+          cta_type: 'hero_button',
+          cta_label: label,
+        });
+      });
+    });
+
+    // Nav CTA button
+    const navCta = document.querySelector('.nav__cta');
+    if (navCta) {
+      navCta.addEventListener('click', () => {
+        gtag('event', 'cta_click', {
+          cta_type: 'nav_button',
+          cta_label: 'Написать',
+        });
+      });
+    }
+  }
+
+  // ==============================
   // Init
   // ==============================
 
@@ -186,5 +268,7 @@
     initSmoothScroll();
     initActiveNavHighlight();
     initCardGlow();
+    initSectionTracking();
+    initCTATracking();
   });
 })();
