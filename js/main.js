@@ -258,6 +258,21 @@
   }
 
   // ==============================
+  // Clickable case cards
+  // ==============================
+
+  function initClickableCases() {
+    document.querySelectorAll('.case').forEach(card => {
+      const link = card.querySelector('.case__link');
+      if (!link) return;
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
+        window.location.href = link.href;
+      });
+    });
+  }
+
+  // ==============================
   // Init
   // ==============================
 
@@ -270,5 +285,6 @@
     initCardGlow();
     initSectionTracking();
     initCTATracking();
+    initClickableCases();
   });
 })();

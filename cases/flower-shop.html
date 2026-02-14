@@ -33,7 +33,7 @@
 </head>
 <body>
 
-  <div class="container">
+  <div class="container cd-page">
 
     <!-- Back -->
     <a href="../index.html#cases" class="cd-back fade-up">
@@ -47,12 +47,10 @@
       <h1 class="cd-hero__title fade-up">ИИ-бот для сети цветочных магазинов</h1>
       <p class="cd-hero__subtitle fade-up">Telegram-бот на GPT, который консультирует клиентов, подбирает букеты и оформляет заказы 24/7. Менеджер подключается только на сложные случаи.</p>
 
-      <!-- NanoBanana hero placeholder -->
-      <div class="cd-hero__visual fade-up">
-        <!--
-        NanoBanana Prompt:
-        A detailed 3D scene: a floating smartphone showing a Telegram chat interface with a flower shop bot conversation. Beautiful rose bouquets and flower arrangements floating around the phone. Chat bubbles with flower emojis visible on screen. A small green "online 24/7" indicator glowing. Deep dark background #0a0a0f with warm accent lighting from the flowers. Indigo (#6366f1) glow behind the phone. Clean modern 3D illustration, matte finish, cinematic lighting, 16:9 aspect ratio.
-        -->
+      <!-- Hero image -->
+      <div class="cd-hero__visual fade-up" onclick="openLightbox(this.querySelector('img'))">
+        <img src="../assets/cases/flower-shop-hero.png" alt="ИИ-бот для сети цветочных магазинов - скриншот Telegram" loading="lazy">
+        <span class="cd-hero__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>Увеличить</span>
       </div>
 
       <div class="cd-compare fade-up">
@@ -84,32 +82,12 @@
     <!-- Решение -->
     <section class="cd-section fade-up">
       <h2 class="cd-section__title">Что сделали</h2>
-      <p class="cd-section__text">Разработал Telegram-бота на GPT, обученного на ассортименте магазина. Бот знает каждый букет, цену, наличие и сроки доставки. Ведёт диалог как живой консультант.</p>
+      <p class="cd-section__text">Разработал Telegram-бота на GPT, обученного на ассортименте магазина. Бот знает каждый букет, цену, наличие и сроки доставки. Ведёт диалог как живой консультант, оформляет заказ и отправляет ссылку на оплату. Доставка запускается автоматически после оплаты.</p>
 
-      <!-- Chat mockup -->
-      <div class="cd-mockup fade-up">
-        <div class="cd-mockup__bar">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/></svg>
-          <span class="cd-mockup__bar-title">Бот-консультант - онлайн</span>
-        </div>
-        <div class="cd-mockup__body">
-          <div class="cd-chat">
-            <div class="cd-chat__msg cd-chat__msg--user">Хочу заказать букет для жены на день рождения, бюджет 3-5 тысяч</div>
-            <div class="cd-chat__msg cd-chat__msg--bot">
-              Отличный повод! Вот что могу предложить в этом бюджете:
-              <br><br>
-              1. "Нежность" - 25 розовых роз - 3 200 &#8381;<br>
-              2. "Весна" - микс тюльпанов и пионов - 4 100 &#8381;<br>
-              3. "Элегант" - 15 белых роз с эвкалиптом - 4 800 &#8381;
-              <div class="cd-chat__btn">Выбрать букет</div>
-            </div>
-            <div class="cd-chat__msg cd-chat__msg--user">Второй вариант, доставка на завтра к 10 утра</div>
-            <div class="cd-chat__msg cd-chat__msg--bot">
-              Букет "Весна" - 4 100 &#8381;. Доставка завтра к 10:00. Куда доставить? Напишите адрес, и я оформлю заказ.
-            </div>
-            <div class="cd-chat__typing">Бот печатает...</div>
-          </div>
-        </div>
+      <!-- Solution screenshot -->
+      <div class="cd-solution-img fade-up" onclick="openLightbox(this.querySelector('img'))">
+        <img src="../assets/cases/flower-shop-solution.png" alt="Скриншот Telegram-бота для цветочного магазина" loading="lazy">
+        <span class="cd-hero__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>Увеличить</span>
       </div>
 
       <h3 class="cd-section__title" style="margin-top: 32px;">Технологии</h3>
@@ -119,6 +97,7 @@
         <span class="cd-stack__item">OpenAI GPT-4o-mini</span>
         <span class="cd-stack__item"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
         <span class="cd-stack__item"><i class="devicon-redis-plain colored"></i> Redis</span>
+        <span class="cd-stack__item">ЮKassa API</span>
       </div>
     </section>
 
@@ -178,6 +157,27 @@
     </div>
   </footer>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox__close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
   <script src="../js/main.js"></script>
+  <script>
+    function openLightbox(img) {
+      const lb = document.getElementById('lightbox');
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-img').alt = img.alt;
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(e) {
+      if (e && e.target.tagName === 'IMG') return;
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
 </body>
 </html>
