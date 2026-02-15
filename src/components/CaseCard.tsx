@@ -21,6 +21,14 @@ export default function CaseCard({ data }: { data: CaseData }) {
       <div className="case__header">
         <span className="case__number">{data.number}</span>
         <span className="case__category">{data.category}</span>
+        {data.detailedCase && (
+          <span
+            className="case__detailed-badge"
+            data-tooltip="Владелец проекта дал разрешение раскрывать подробности"
+          >
+            Подробный кейс
+          </span>
+        )}
       </div>
       <h3 className="case__title">{data.title}</h3>
       <div className="case__meta">

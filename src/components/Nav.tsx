@@ -48,13 +48,13 @@ export default function Nav() {
   const navLinks = isHome
     ? [
         { href: '#services', label: 'Услуги' },
-        { href: '#cases', label: 'Кейсы' },
+        { href: '/cases', label: 'Кейсы' },
         { href: '#pricing', label: 'Цены' },
         { href: '#process', label: 'Как работаю' },
       ]
     : [
         { href: '/#services', label: 'Услуги' },
-        { href: '/#cases', label: 'Кейсы' },
+        { href: '/cases', label: 'Кейсы' },
         { href: '/#pricing', label: 'Цены' },
         { href: '/#process', label: 'Как работаю' },
       ];

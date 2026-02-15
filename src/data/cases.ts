@@ -26,12 +26,78 @@ export interface CaseData {
     results: { bold: string; text: string }[];
     stack: string[];
   };
+  detailedCase?: boolean;
 }
 
 export const cases: CaseData[] = [
   {
-    slug: 'flower-shop',
+    slug: 'bonaqa-tech',
     number: '01',
+    category: 'Образовательная платформа',
+    title: 'bonaqa — платформа для подготовки QA-автоматизаторов',
+    subtitle: 'Полнофункциональная EdTech-платформа с интерактивными упражнениями, AI-проверкой кода через GPT-4o, тренажёрами веб-элементов, геймификацией и админ-панелью.',
+    heroImage: '/cases/bonaqa-hero.png',
+    solutionImage: '/cases/bonaqa-solution.png',
+    solutionImageWide: true,
+    metaTitle: 'bonaqa — образовательная платформа для QA — Кейс — Привалов',
+    metaDescription: 'Образовательная платформа bonaqa: интерактивные курсы, AI-проверка кода, тренажёры, геймификация. React, Node.js, PostgreSQL, GPT-4o.',
+    situation: {
+      text: 'Компания готовит QA-автоматизаторов. Обучение велось через разрозненные инструменты, не было единой среды для практики.',
+      points: [
+        'Материалы раскиданы по Google Docs, Notion и Telegram',
+        'Нет интерактивной практики — студенты только читали теорию',
+        'Проверка заданий вручную преподавателем — медленно и не масштабируется',
+        'Нет геймификации — студенты теряли мотивацию и бросали курсы',
+        'Нет тренажёра для практики автоматизации реальных UI-элементов',
+      ],
+    },
+    solution: 'Разработал полноценную образовательную платформу: система курсов с 4 типами интерактивных упражнений, AI-проверка открытых ответов через GPT-4o, тренажёр из 13 веб-элементов для практики автоматизации, Practice API с Swagger, геймификация с XP/уровнями/лигами/достижениями, анимированный маскот Bonnie и полная админ-панель.',
+    stack: [
+      { name: 'React', icon: 'devicon-react-original colored' },
+      { name: 'Vite', icon: 'devicon-vitejs-plain colored' },
+      { name: 'Node.js', icon: 'devicon-nodejs-plain colored' },
+      { name: 'Express', icon: 'devicon-express-original' },
+      { name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored' },
+      { name: 'Prisma' },
+      { name: 'OpenAI GPT-4o' },
+      { name: 'Docker', icon: 'devicon-docker-plain colored' },
+      { name: 'Nginx', icon: 'devicon-nginx-original colored' },
+      { name: 'GitLab CI/CD', icon: 'devicon-gitlab-plain colored' },
+    ],
+    results: [
+      { value: '4 типа', label: 'Интерактивных\nупражнений' },
+      { value: '13', label: 'Тренажёров\nвеб-элементов' },
+      { value: 'AI', label: 'Проверка кода\nчерез GPT-4o' },
+      { value: '10', label: 'Уровней\nгеймификации' },
+    ],
+    compare: {
+      freelance: { time: '3 месяца', price: '300 - 600 тыс. \u20BD' },
+      ai: { time: '1 неделя', price: '150 тыс. \u20BD' },
+    },
+    quote: {
+      text: '\u201CМы получили не просто LMS, а полноценную интерактивную среду, где студенты учатся, практикуются и соревнуются. AI-проверка кода — это game changer.\u201D',
+      author: 'Владелец bonaqa',
+    },
+    cta: {
+      title: 'Нужна образовательная платформа?',
+      text: 'Расскажите задачу — предложу решение и оценю сроки. Бесплатно.',
+    },
+    card: {
+      meta: ['EdTech', 'QA-автоматизация'],
+      task: 'Создать платформу для подготовки QA-автоматизаторов с\u00A0интерактивной практикой, AI-проверкой кода и\u00A0геймификацией. Заменить разрозненные Google Docs и\u00A0Notion единой средой.',
+      solution: 'Полная EdTech-платформа: 4\u00A0типа упражнений, AI-проверка через GPT-4o, 13\u00A0тренажёров веб-элементов, Practice API, геймификация с\u00A0XP/лигами/достижениями, маскот Bonnie и\u00A0админ-панель.',
+      results: [
+        { bold: '4 типа упражнений', text: '+ AI-проверка кода' },
+        { bold: '13 тренажёров', text: 'веб-элементов для автоматизации' },
+        { bold: '10 уровней', text: '+ лиги + достижения' },
+      ],
+      stack: ['React', 'Node.js', 'PostgreSQL', 'Prisma', 'GPT-4o', 'Docker'],
+    },
+    detailedCase: true,
+  },
+  {
+    slug: 'flower-shop',
+    number: '02',
     category: 'Telegram-бот + ИИ',
     title: 'ИИ-бот для сети цветочных магазинов',
     subtitle: 'Telegram-бот на GPT, который консультирует клиентов, подбирает букеты и оформляет заказы 24/7. Менеджер подключается только на сложные случаи.',
@@ -90,7 +156,7 @@ export const cases: CaseData[] = [
   },
   {
     slug: 'yoga-studio',
-    number: '02',
+    number: '03',
     category: 'Веб-разработка',
     title: 'Лендинг + CRM-интеграция для сети студий йоги',
     subtitle: 'Новый лендинг с онлайн-записью, интеграцией оплаты и CRM. Конверсия выросла почти в 3 раза за 5 дней разработки.',
@@ -148,7 +214,7 @@ export const cases: CaseData[] = [
   },
   {
     slug: 'marketplace-seller',
-    number: '03',
+    number: '04',
     category: 'Автоматизация',
     title: 'Автоматизация для селлера на маркетплейсе',
     subtitle: 'Динамическое ценообразование, генерация карточек через ИИ и единый дашборд. 25 часов экономии каждую неделю.',
@@ -207,7 +273,7 @@ export const cases: CaseData[] = [
   },
   {
     slug: 'hr-bot',
-    number: '04',
+    number: '05',
     category: 'ИИ-бот + RAG',
     title: 'HR-бот с базой знаний для IT-компании',
     subtitle: 'Telegram-бот на RAG, обученный на документах компании. Отвечает на вопросы сотрудников по регламентам, политикам и процедурам.',

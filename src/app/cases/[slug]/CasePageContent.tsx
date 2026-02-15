@@ -37,7 +37,7 @@ export default function CasePageContent({
 
       <div className="container cd-page">
         {/* Back */}
-        <Link href="/#cases" className="cd-back fade-up">
+        <Link href="/cases" className="cd-back fade-up">
           <BackIcon />
           Все кейсы
         </Link>
@@ -45,6 +45,14 @@ export default function CasePageContent({
         {/* Hero */}
         <section className="cd-hero">
           <span className="cd-hero__badge fade-up">{caseData.category}</span>
+          {caseData.detailedCase && (
+            <span
+              className="cd-detailed-badge fade-up"
+              data-tooltip="Владелец проекта дал разрешение раскрывать подробности"
+            >
+              Подробный кейс
+            </span>
+          )}
           <h1 className="cd-hero__title fade-up">{caseData.title}</h1>
           <p className="cd-hero__subtitle fade-up">{caseData.subtitle}</p>
 

@@ -3,6 +3,13 @@ export default function Hero() {
     <section className="hero" id="hero">
       <div className="hero__grid-bg"></div>
       <div className="hero__glow"></div>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/hero-bg.png"
+        alt=""
+        aria-hidden="true"
+        className="hero__visual-bg"
+      />
       <div className="container hero__content">
         <p className="hero__tag fade-up">Fullstack-разработчик &middot; ИИ-интеграции</p>
         <h1 className="hero__title fade-up">
@@ -18,7 +25,7 @@ export default function Hero() {
         </p>
         <div className="hero__actions fade-up">
           <a href="#contacts" className="btn btn--primary">Обсудить проект</a>
-          <a href="#cases" className="btn btn--ghost">Смотреть кейсы</a>
+          <a href="/cases" className="btn btn--ghost">Смотреть кейсы</a>
         </div>
       </div>
     </section>
