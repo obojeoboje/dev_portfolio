@@ -29,6 +29,17 @@ export default function CaseCard({ data }: { data: CaseData }) {
             Подробный кейс
           </span>
         )}
+        {data.demoUrl && (
+          <a
+            href={data.demoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="case__demo-badge"
+            onClick={(e) => e.stopPropagation()}
+          >
+            Демо сайт ↗
+          </a>
+        )}
       </div>
       <h3 className="case__title">{data.title}</h3>
       <div className="case__meta">

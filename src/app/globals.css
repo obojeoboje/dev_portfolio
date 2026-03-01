@@ -1600,6 +1600,49 @@ strong {
   transform: translateX(-50%) translateY(0);
 }
 
+/* Demo badge on case card */
+.case__demo-badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: var(--accent-start);
+  padding: 3px 10px;
+  border-radius: 100px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.case__demo-badge:hover {
+  background: var(--accent-end, #16a34a);
+}
+
+/* Demo button on case detail page */
+.cd-hero__demo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  padding: 10px 24px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent-start);
+  border: none;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.cd-hero__demo-btn:hover {
+  background: var(--accent-end, #16a34a);
+  transform: translateY(-1px);
+}
+
 /* Case link button on index */
 .case__link {
   display: inline-flex;

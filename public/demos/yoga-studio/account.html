@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>#demo - Личный кабинет</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="demo-banner">Это демо-версия сайта. Создано для <a href="/cases/yoga-studio">портфолио</a>.</div>
+
+  <!-- Navigation (Account version) -->
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-icon">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 4C28 12 16 20 16 32c0 8 4 14 10 17.2C24.4 44 24 38 28 34c2-2 4-5 4-10 0 5 2 8 4 10 4 4 3.6 10 2 15.2C44 46 48 40 48 32 48 20 36 12 32 4z"/>
+        </svg>
+      </span>
+      <span class="nav__logo-text">#demo</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html#schedule">Расписание</a></li>
+      <li><a href="account.html" class="active">Мои занятия</a></li>
+      <li><a href="index.html#pricing">Абонемент</a></li>
+    </ul>
+    <div class="nav__avatar">
+      <div class="nav__avatar-circle">АК</div>
+      <span class="nav__avatar-name">Анна К.</span>
+    </div>
+  </nav>
+
+  <!-- Account Page -->
+  <div class="account">
+    <div class="account__layout">
+
+      <!-- Left Column - Main Content -->
+      <div class="account__main">
+
+        <!-- My Bookings -->
+        <div>
+          <h2 class="account__section-title">Мои записи</h2>
+
+          <div class="booking-card">
+            <div class="booking-card__info">
+              <div class="booking-card__title">Хатха-йога</div>
+              <div class="booking-card__meta">
+                Инструктор: Мария Светлова<br>
+                Пн, 17 февраля - 10:00<br>
+                Студия на Пушкина, зал 1
+              </div>
+            </div>
+            <button class="booking-card__cancel">Отменить запись</button>
+          </div>
+
+          <div class="booking-card">
+            <div class="booking-card__info">
+              <div class="booking-card__title">Виньяса</div>
+              <div class="booking-card__meta">
+                Инструктор: Дмитрий Орлов<br>
+                Ср, 19 февраля - 18:30<br>
+                Студия на Гагарина, зал 2
+              </div>
+            </div>
+            <button class="booking-card__cancel">Отменить запись</button>
+          </div>
+
+          <a href="booking.html" class="btn-add-booking">+ Записаться на занятие</a>
+        </div>
+
+        <!-- Visit History -->
+        <div>
+          <h2 class="account__section-title">История посещений</h2>
+          <div class="history-list">
+            <div class="history-item">
+              <span>14 фев - Хатха-йога - Мария С.</span>
+              <span class="history-item__check">&#10003;</span>
+            </div>
+            <div class="history-item">
+              <span>12 фев - Аэройога - Елена В.</span>
+              <span class="history-item__check">&#10003;</span>
+            </div>
+            <div class="history-item">
+              <span>10 фев - Виньяса - Дмитрий О.</span>
+              <span class="history-item__check">&#10003;</span>
+            </div>
+            <div class="history-total">Всего посещений: 24</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column - Sidebar -->
+      <div class="account__sidebar">
+
+        <!-- Subscription -->
+        <div class="sub-card">
+          <div class="sub-card__label">Мой абонемент</div>
+          <div class="sub-card__plan">Безлимит</div>
+          <div class="sub-card__desc">Все направления, любая студия</div>
+          <div class="progress-bar">
+            <div class="progress-bar__fill" style="width: 60%;"></div>
+          </div>
+          <div class="sub-card__remaining">Осталось: 18 из 30 дней</div>
+          <div class="sub-card__until">Действует до 8 марта 2026</div>
+          <button class="sub-card__btn">Продлить абонемент</button>
+        </div>
+
+        <!-- Bonuses -->
+        <div class="bonus-card">
+          <div class="bonus-card__label">Бонусы</div>
+          <div class="bonus-card__value">1 200</div>
+          <div class="bonus-card__unit">бонусных баллов</div>
+          <div class="bonus-card__note">= скидка 1 200 &#8381; на продление</div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

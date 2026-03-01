@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>#demo - Студия йоги</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="demo-banner">Это демо-версия сайта. Создано для <a href="/cases/yoga-studio">портфолио</a>.</div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-icon">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 4C28 12 16 20 16 32c0 8 4 14 10 17.2C24.4 44 24 38 28 34c2-2 4-5 4-10 0 5 2 8 4 10 4 4 3.6 10 2 15.2C44 46 48 40 48 32 48 20 36 12 32 4z"/>
+        </svg>
+      </span>
+      <span class="nav__logo-text">#demo</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#directions" class="active">Направления</a></li>
+      <li><a href="#schedule">Расписание</a></li>
+      <li><a href="#reviews">Отзывы</a></li>
+      <li><a href="#pricing">Абонементы</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+    <a href="booking.html" class="nav__cta">Записаться</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__content">
+      <span class="hero__badge">Студия йоги в центре Москвы</span>
+      <h1 class="hero__title">Найди свой баланс</h1>
+      <p class="hero__subtitle">Хатха, виньяса, аэройога - расписание для любого уровня. Первое занятие бесплатно.</p>
+      <a href="booking.html" class="hero__cta">
+        Записаться на пробное занятие
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <div class="hero__stat-value">1 200+</div>
+          <div class="hero__stat-label">учеников</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-value">6</div>
+          <div class="hero__stat-label">направлений</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-value">4.9</div>
+          <div class="hero__stat-label">рейтинг</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Directions -->
+  <section id="directions" class="section section--white">
+    <div class="section__header">
+      <h2 class="section__title">Направления</h2>
+      <p class="section__subtitle">Выберите практику, которая подходит именно вам</p>
+    </div>
+    <div class="directions">
+      <div class="directions__grid">
+        <div class="direction-card">
+          <div class="direction-card__icon">🧘</div>
+          <h3 class="direction-card__title">Хатха-йога</h3>
+          <p class="direction-card__text">Классическая практика для начинающих и продолжающих. Статические асаны, дыхание, расслабление.</p>
+          <div class="direction-card__meta">
+            <span>60 мин</span>
+            <span>Все уровни</span>
+          </div>
+        </div>
+        <div class="direction-card">
+          <div class="direction-card__icon">🌊</div>
+          <h3 class="direction-card__title">Виньяса</h3>
+          <p class="direction-card__text">Динамичная практика: плавные переходы между асанами в ритме дыхания. Сила и гибкость.</p>
+          <div class="direction-card__meta">
+            <span>75 мин</span>
+            <span>Средний уровень</span>
+          </div>
+        </div>
+        <div class="direction-card">
+          <div class="direction-card__icon">🪁</div>
+          <h3 class="direction-card__title">Аэройога</h3>
+          <p class="direction-card__text">Практика в гамаках. Декомпрессия позвоночника, перевернутые позы, глубокая растяжка.</p>
+          <div class="direction-card__meta">
+            <span>60 мин</span>
+            <span>Все уровни</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule -->
+  <section id="schedule" class="section section--cream">
+    <div class="section__header">
+      <h2 class="section__title">Расписание</h2>
+      <p class="section__subtitle">Занятия проходят каждый день с 7:00 до 21:00</p>
+    </div>
+    <div class="schedule">
+      <div class="schedule__grid">
+        <!-- Monday -->
+        <div class="schedule__day">
+          <h3 class="schedule__day-name">Понедельник</h3>
+          <div class="schedule__class">
+            <div>
+              <div class="schedule__class-name">Хатха-йога</div>
+              <div class="schedule__class-level">Все уровни - Мария Светлова</div>
+            </div>
+            <span class="schedule__class-time">10:00</span>
+          </div>
+          <div class="schedule__class">
+            <div>
+              <div class="schedule__class-name">Виньяса</div>
+              <div class="schedule__class-level">Средний - Дмитрий Орлов</div>
+            </div>
+            <span class="schedule__class-time">13:00</span>
+          </div>
+          <div class="schedule__class">
+            <div>
+              <div class="schedule__class-name">Аэройога</div>
+              <div class="schedule__class-level">Все уровни - Елена Воронова</div>
+            </div>
+            <span class="schedule__class-time">18:30</span>
+          </div>
+        </div>
+        <!-- Wednesday -->
+        <div class="schedule__day">
+          <h3 class="schedule__day-name">Среда</h3>
+          <div class="schedule__class">
+            <div>
+              <div class="schedule__class-name">Хатха-йога</div>
+              <div class="schedule__class-level">Все уровни - Мария Светлова</div>
+            </div>
+            <span class="schedule__class-time">10:00</span>
+          </div>
+          <div class="schedule__class">
+            <div>
+              <div class="schedule__class-name">Аэройога</div>
+              <div class="schedule__class-level">Все уровни - Елена Воронова</div>
+            </div>
+            <span class="schedule__class-time">14:00</span>
+          </div>
+          <div class="schedule__class">
+            <div>
+              <div class="schedule__class-name">Виньяса</div>
+              <div class="schedule__class-level">Средний - Дмитрий Орлов</div>
+            </div>
+            <span class="schedule__class-time">18:30</span>
+          </div>
+        </div>
+        <!-- Friday -->
+        <div class="schedule__day">
+          <h3 class="schedule__day-name">Пятница</h3>
+          <div class="schedule__class">
+            <div>
+              <div class="schedule__class-name">Виньяса</div>
+              <div class="schedule__class-level">Средний - Дмитрий Орлов</div>
+            </div>
+            <span class="schedule__class-time">10:00</span>
+          </div>
+          <div class="schedule__class">
+            <div>
+              <div class="schedule__class-name">Хатха-йога</div>
+              <div class="schedule__class-level">Все уровни - Мария Светлова</div>
+            </div>
+            <span class="schedule__class-time">14:00</span>
+          </div>
+          <div class="schedule__class">
+            <div>
+              <div class="schedule__class-name">Аэройога</div>
+              <div class="schedule__class-level">Все уровни - Елена Воронова</div>
+            </div>
+            <span class="schedule__class-time">19:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="reviews" class="section section--white">
+    <div class="section__header">
+      <h2 class="section__title">Отзывы</h2>
+      <p class="section__subtitle">Что говорят наши ученики</p>
+    </div>
+    <div class="testimonials">
+      <div class="testimonials__grid">
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-card__text">"Хожу на хатху уже полгода. Спина перестала болеть после первого месяца, а качество сна улучшилось невероятно. Мария - лучший инструктор!"</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">АК</div>
+            <div>
+              <div class="testimonial-card__name">Анна Козлова</div>
+              <div class="testimonial-card__role">Ходит 6 месяцев</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-card__text">"Аэройога - это что-то невероятное! Никогда не думал, что йога может быть такой увлекательной. Теперь хожу три раза в неделю."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">ДМ</div>
+            <div>
+              <div class="testimonial-card__name">Дмитрий Миронов</div>
+              <div class="testimonial-card__role">Ходит 3 месяца</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-card__text">"Очень уютная студия с профессиональными инструкторами. Виньяса-флоу по средам - мой любимый формат. Рекомендую всем!"</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">ЕС</div>
+            <div>
+              <div class="testimonial-card__name">Елена Савченко</div>
+              <div class="testimonial-card__role">Ходит 1 год</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-card__text">"Записалась на пробное и осталась. Удобное расписание, чистая студия, приятная атмосфера. Абонемент безлимит - лучшая инвестиция в себя."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">ОВ</div>
+            <div>
+              <div class="testimonial-card__name">Ольга Васильева</div>
+              <div class="testimonial-card__role">Ходит 4 месяца</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section section--cream">
+    <div class="section__header">
+      <h2 class="section__title">Абонементы</h2>
+      <p class="section__subtitle">Выберите удобный формат</p>
+    </div>
+    <div class="pricing">
+      <div class="pricing__grid">
+        <div class="pricing-card">
+          <h3 class="pricing-card__title">Разовое</h3>
+          <div class="pricing-card__price">800 &#8381;</div>
+          <div class="pricing-card__period">за занятие</div>
+          <ul class="pricing-card__features">
+            <li>Любое направление</li>
+            <li>Коврик и реквизит</li>
+            <li>Раздевалка и душ</li>
+          </ul>
+          <a href="booking.html" class="pricing-card__btn">Записаться</a>
+        </div>
+        <div class="pricing-card pricing-card--popular">
+          <span class="pricing-card__badge">Популярный</span>
+          <h3 class="pricing-card__title">Безлимит</h3>
+          <div class="pricing-card__price">5 900 &#8381;</div>
+          <div class="pricing-card__period">в месяц</div>
+          <ul class="pricing-card__features">
+            <li>Все направления</li>
+            <li>Любая студия</li>
+            <li>Без ограничений</li>
+            <li>Заморозка 7 дней</li>
+          </ul>
+          <a href="booking.html" class="pricing-card__btn pricing-card__btn--filled">Оформить</a>
+        </div>
+        <div class="pricing-card">
+          <h3 class="pricing-card__title">8 занятий</h3>
+          <div class="pricing-card__price">4 800 &#8381;</div>
+          <div class="pricing-card__period">в месяц</div>
+          <ul class="pricing-card__features">
+            <li>Все направления</li>
+            <li>Любая студия</li>
+            <li>Срок: 30 дней</li>
+          </ul>
+          <a href="booking.html" class="pricing-card__btn">Оформить</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section section--white">
+    <div class="section__header">
+      <h2 class="section__title">Контакты</h2>
+      <p class="section__subtitle">Приходите в нашу студию</p>
+    </div>
+    <div class="contact">
+      <div class="contact__info">
+        <p class="contact__item"><strong>Адрес:</strong> Москва, ул. Пушкина, 15</p>
+        <p class="contact__item"><strong>Телефон:</strong> +7 (999) 123-45-67</p>
+        <p class="contact__item"><strong>Время работы:</strong> Ежедневно 7:00 - 21:00</p>
+        <p class="contact__item"><strong>Email:</strong> hello@demo.example</p>
+      </div>
+      <a href="booking.html" class="hero__cta" style="margin-top:16px;">Записаться на пробное занятие</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2026 #demo. Все права защищены.
+  </footer>
+
+</body>
+</html>

@@ -56,6 +56,17 @@ export default function CasePageContent({
           <h1 className="cd-hero__title fade-up">{caseData.title}</h1>
           <p className="cd-hero__subtitle fade-up">{caseData.subtitle}</p>
 
+          {caseData.demoUrl && (
+            <a
+              href={caseData.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cd-hero__demo-btn fade-up"
+            >
+              Смотреть демо ↗
+            </a>
+          )}
+
           <LightboxImage
             src={caseData.heroImage}
             alt={`${caseData.title} - скриншот`}

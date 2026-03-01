@@ -27,6 +27,7 @@ export interface CaseData {
     stack: string[];
   };
   detailedCase?: boolean;
+  demoUrl?: string;
 }
 
 export const cases: CaseData[] = [
@@ -211,6 +212,7 @@ export const cases: CaseData[] = [
       ],
       stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'ЮKassa API', 'amoCRM API'],
     },
+    demoUrl: '/demos/yoga-studio/index.html',
   },
   {
     slug: 'marketplace-seller',
