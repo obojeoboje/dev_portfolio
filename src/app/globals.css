@@ -849,6 +849,12 @@ strong {
   color: var(--text-muted);
 }
 
+.footer__legal {
+  margin-top: 8px;
+  font-size: 0.75rem !important;
+  opacity: 0.6;
+}
+
 /* ==============================
    Case Detail Page
    ============================== */
