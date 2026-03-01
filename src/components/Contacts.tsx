@@ -20,20 +20,20 @@ export default function Contacts() {
           Первая консультация бесплатно. Напишите&nbsp;- отвечу в&nbsp;течение часа.
         </p>
 
-        <div className="contacts__buttons fade-up">
-          <a href="https://t.me/Neznayuusername" target="_blank" rel="noopener" className="btn btn--primary btn--lg">
-            <TelegramIcon />
-            Написать в Telegram
+        <div className="contacts__cta fade-up">
+          <div className="contacts__buttons">
+            <a href="https://t.me/Neznayuusername" target="_blank" rel="noopener" className="btn btn--primary btn--lg">
+              <TelegramIcon />
+              Написать в Telegram
+            </a>
+            <a href="mailto:obojealexanderwork@gmail.com" className="btn btn--ghost btn--lg">
+              <EmailIcon />
+              Написать на Email
+            </a>
+          </div>
+          <a href="/cases" className="contacts__cases-link">
+            Смотреть кейсы →
           </a>
-          <a href="mailto:obojealexanderwork@gmail.com" className="btn btn--ghost btn--lg">
-            <EmailIcon />
-            Написать на Email
-          </a>
-        </div>
-
-        <div className="contacts__info fade-up">
-          <p>Telegram: <a href="https://t.me/Neznayuusername" target="_blank" rel="noopener">@Neznayuusername</a></p>
-          <p>Email: <a href="mailto:obojealexanderwork@gmail.com">obojealexanderwork@gmail.com</a></p>
         </div>
       </div>
     </section>

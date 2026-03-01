@@ -37,7 +37,7 @@ export default function CaseCard({ data }: { data: CaseData }) {
             className="case__demo-badge"
             onClick={(e) => e.stopPropagation()}
           >
-            Демо сайт ↗
+            Демо сайт
           </a>
         )}
       </div>
