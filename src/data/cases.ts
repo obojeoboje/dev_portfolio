@@ -71,7 +71,7 @@ export const cases: CaseData[] = [
       { value: '10', label: 'Уровней\nгеймификации' },
     ],
     compare: {
-      freelance: { time: '3 месяца', price: '300 - 600 тыс. \u20BD' },
+      freelance: { time: '3 месяца', price: '400 - 700 тыс. \u20BD' },
       ai: { time: '1 неделя', price: '150 тыс. \u20BD' },
     },
     quote: {
