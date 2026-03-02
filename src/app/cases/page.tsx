@@ -3,8 +3,12 @@ import { cases } from '@/data/cases';
 import CaseCard from '@/components/CaseCard';
 
 export const metadata: Metadata = {
-  title: 'Кейсы — Привалов',
-  description: 'Реальные проекты: Telegram-боты, сайты, автоматизация. Смотрите результаты и технологии.',
+  title: 'Кейсы разработки: боты, сайты, автоматизация',
+  description:
+    'Реальные проекты с результатами: Telegram-боты с ИИ, сайты, автоматизация бизнеса. Кейсы с цифрами и отзывами клиентов.',
+  alternates: {
+    canonical: '/cases',
+  },
 };
 
 export default function CasesPage() {

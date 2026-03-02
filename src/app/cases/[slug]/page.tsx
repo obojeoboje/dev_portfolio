@@ -4,6 +4,8 @@ import { cases, getCaseBySlug, getAdjacentCases } from '@/data/cases';
 import CasePageContent from './CasePageContent';
 import BonaqaDetailPage from './BonaqaDetailPage';
 
+const BASE_URL = 'https://privalov.dev';
+
 export function generateStaticParams() {
   return cases.map((c) => ({ slug: c.slug }));
 }
@@ -19,6 +21,19 @@ export async function generateMetadata({
   return {
     title: caseData.metaTitle,
     description: caseData.metaDescription,
+    openGraph: {
+      images: [
+        {
+          url: caseData.heroImage,
+          width: 1200,
+          height: 630,
+          alt: caseData.title,
+        },
+      ],
+    },
+    alternates: {
+      canonical: `/cases/${slug}`,
+    },
   };
 }
 
@@ -33,9 +48,41 @@ export default async function CasePage({
 
   const { prev, next } = getAdjacentCases(slug);
 
-  if (slug === 'bonaqa-tech') {
-    return <BonaqaDetailPage caseData={caseData} prev={prev} next={next} />;
-  }
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Главная',
+        item: BASE_URL,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Кейсы',
+        item: `${BASE_URL}/cases`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: caseData.title,
+        item: `${BASE_URL}/cases/${slug}`,
+      },
+    ],
+  };
 
-  return <CasePageContent caseData={caseData} prev={prev} next={next} />;
+  return (
+    <>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbJsonLd)}
+      </script>
+      {slug === 'bonaqa-tech' ? (
+        <BonaqaDetailPage caseData={caseData} prev={prev} next={next} />
+      ) : (
+        <CasePageContent caseData={caseData} prev={prev} next={next} />
+      )}
+    </>
+  );
 }
