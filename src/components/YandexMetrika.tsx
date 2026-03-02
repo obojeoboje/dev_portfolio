@@ -2,8 +2,7 @@
 
 import Script from 'next/script';
 
-// TODO: Замени на свой номер счётчика из Яндекс.Метрики
-const YM_ID = '00000000';
+const YM_ID = '107082095';
 
 export default function YandexMetrika() {
   if (process.env.NODE_ENV !== 'production') return null;
