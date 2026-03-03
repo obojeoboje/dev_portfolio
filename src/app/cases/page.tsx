@@ -5,7 +5,7 @@ import CaseCard from '@/components/CaseCard';
 export const metadata: Metadata = {
   title: 'Кейсы разработки: боты, сайты, автоматизация',
   description:
-    'Реальные проекты с результатами: Telegram-боты с ИИ, сайты, автоматизация бизнеса. Кейсы с цифрами и отзывами клиентов.',
+    'Портфолио: собственный проект bonaqa и демо-проекты — Telegram-боты, сайты, автоматизация. Стек, подход, результаты.',
   alternates: {
     canonical: '/cases',
   },
@@ -17,7 +17,7 @@ export default function CasesPage() {
       <div className="container">
         <h1 className="section-title fade-up">Кейсы</h1>
         <p className="section-subtitle fade-up">
-          Проекты, которые решили реальные задачи бизнеса
+          Собственные и демо-проекты: от идеи до работающего решения
         </p>
 
         <div className="cases__grid">

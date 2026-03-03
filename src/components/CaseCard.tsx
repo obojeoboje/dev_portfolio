@@ -18,17 +18,34 @@ export default function CaseCard({ data }: { data: CaseData }) {
 
   return (
     <article className="case fade-up" onClick={handleClick}>
+      <div className="case__thumbnail">
+        <img src={data.heroImage} alt={data.title} loading="lazy" />
+      </div>
       <div className="case__header">
         <span className="case__number">{data.number}</span>
         <span className="case__category">{data.category}</span>
-        {data.detailedCase && (
+        {data.ownProject ? (
+          <span
+            className="case__detailed-badge"
+            data-tooltip="Мой собственный продукт, в активной разработке"
+          >
+            Собственный проект
+          </span>
+        ) : data.demoProject ? (
+          <span
+            className="case__demo-project-badge"
+            data-tooltip="Проект разработан для демонстрации навыков и стека технологий"
+          >
+            Демо-проект
+          </span>
+        ) : data.detailedCase ? (
           <span
             className="case__detailed-badge"
             data-tooltip="Владелец проекта дал разрешение раскрывать подробности"
           >
             Подробный кейс
           </span>
-        )}
+        ) : null}
         {data.demoUrl && (
           <a
             href={data.demoUrl}
@@ -42,45 +59,7 @@ export default function CaseCard({ data }: { data: CaseData }) {
         )}
       </div>
       <h3 className="case__title">{data.title}</h3>
-      <div className="case__meta">
-        {data.card.meta.flatMap((m, i) =>
-          i > 0
-            ? [<span key={`dot-${i}`} className="case__dot"></span>, <span key={i}>{m}</span>]
-            : [<span key={i}>{m}</span>]
-        )}
-      </div>
-      <div className="case__body">
-        <div className="case__block">
-          <h4>Задача</h4>
-          <p>{data.card.task}</p>
-        </div>
-        <div className="case__block">
-          <h4>Решение</h4>
-          <p>{data.card.solution}</p>
-        </div>
-        <div className="case__block">
-          <h4>Результат</h4>
-          <ul className="case__results">
-            {data.card.results.map((r, i) => (
-              <li key={i}>
-                <strong>{r.bold}</strong>{r.text ? ` ${r.text}` : ''}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <div className="case__compare">
-        <div className="case__compare-col case__compare-col--old">
-          <span className="case__compare-label">Фриланс</span>
-          <span className="case__compare-value">{data.compare.freelance.time}</span>
-          <span className="case__compare-value">{data.compare.freelance.price}</span>
-        </div>
-        <div className="case__compare-col case__compare-col--new">
-          <span className="case__compare-label">Я + ИИ</span>
-          <span className="case__compare-value">{data.compare.ai.time}</span>
-          <span className="case__compare-value">{data.compare.ai.price}</span>
-        </div>
-      </div>
+      <p className="case__description">{data.cardDescription || data.subtitle}</p>
       <div className="case__stack">
         {data.card.stack.map((s) => (
           <span key={s}>{s}</span>

@@ -11,6 +11,12 @@ const TelegramIcon = () => (
     <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
   </svg>
 );
+const EmailIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="4" width="20" height="16" rx="2" />
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+  </svg>
+);
 const BackIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M19 12H5" /><path d="m12 19-7-7 7-7" />
@@ -82,12 +88,23 @@ export default function BonaqaDetailPage({
           <span className="cd-hero__badge fade-up">{caseData.category}</span>
           <span
             className="cd-detailed-badge fade-up"
-            data-tooltip="Владелец проекта дал разрешение раскрывать подробности"
+            data-tooltip="Мой собственный продукт, в активной разработке"
           >
-            Подробный кейс
+            Собственный проект
           </span>
           <h1 className="cd-hero__title fade-up">{caseData.title}</h1>
           <p className="cd-hero__subtitle fade-up">{caseData.subtitle}</p>
+
+          {caseData.demoUrl && (
+            <a
+              href={caseData.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cd-hero__demo-btn fade-up"
+            >
+              Открыть платформу &#8599;
+            </a>
+          )}
 
           <LightboxImage
             src="/cases/bonaqa-hero.png"
@@ -156,7 +173,7 @@ export default function BonaqaDetailPage({
         <div className="cd-section-divider fade-up">
           <h2 className="cd-section__title">Что внутри платформы</h2>
           <p className="cd-section__text" style={{ textAlign: 'center' }}>
-            10 ключевых модулей, превращающих платформу из простой LMS в интерактивную среду обучения
+            5 ключевых модулей, превращающих платформу из простой LMS в интерактивную среду обучения
           </p>
         </div>
 
@@ -237,27 +254,9 @@ export default function BonaqaDetailPage({
           </p>
         </FeatureSection>
 
-        {/* 5. Practice API */}
+        {/* 5. Геймификация */}
         <FeatureSection
-          title="5. Practice API (BookStore)"
-          imageSrc="/cases/bonaqa-swagger.png"
-          imageAlt="bonaqa — Swagger UI Practice API"
-          onOpen={lightbox.open}
-        >
-          <p className="cd-feature__text">
-            Полноценный REST API книжного магазина с документацией в Swagger UI — студенты пишут автотесты для реального API:
-          </p>
-          <ul className="cd-feature__list">
-            <li>CRUD книг и авторов</li>
-            <li>Пагинация, сортировка, поиск, фильтрация</li>
-            <li>Валидация (уникальный ISBN, каскадные ограничения)</li>
-            <li>Детальные ошибки: 409 Conflict, 400 Bad Request с описанием</li>
-          </ul>
-        </FeatureSection>
-
-        {/* 6. Геймификация */}
-        <FeatureSection
-          title="6. Геймификация"
+          title="5. Геймификация"
           imageSrc="/cases/bonaqa-gamification.png"
           imageAlt="bonaqa — лидерборд, лиги, достижения"
           onOpen={lightbox.open}
@@ -271,50 +270,6 @@ export default function BonaqaDetailPage({
             <li><strong>Дневные квесты:</strong> 3 рандомных задания каждый день + бонус за выполнение всех трёх</li>
             <li><strong>Достижения:</strong> скрытые и открытые, по категориям</li>
             <li><strong>Combo-система:</strong> счётчик серии правильных ответов с визуальными эффектами и конфетти</li>
-          </ul>
-        </FeatureSection>
-
-        {/* 7. Маскот Bonnie — с видео */}
-        <section className="cd-feature fade-up">
-          <div className="cd-feature__text">
-            <h2 className="cd-feature__title">7. Маскот Bonnie и визуальные эффекты</h2>
-            <p className="cd-feature__text">
-              Анимированный маскот на Lottie с контекстными реакциями на действия пользователя:
-            </p>
-            <ul className="cd-feature__list">
-              <li>Радуется при правильных ответах и 100% на квизе</li>
-              <li>Грустит при ошибках, празднует завершение блока/курса</li>
-              <li>Появляется на Learning Path, в результатах квизов, при Level-Up</li>
-              <li><strong>Toast-уведомления:</strong> XP gained, Achievement unlocked, Streak milestone</li>
-              <li><strong>Full-screen Level-Up</strong> модалка с конфетти и маскотом</li>
-              <li>Звуковые эффекты, конфетти-анимации разной интенсивности</li>
-            </ul>
-          </div>
-          <div className="cd-feature__visual">
-            <div className="cd-feature__video">
-              <video autoPlay loop muted playsInline>
-                <source src="https://assets.masko.ai/989154/pity-deb3/dancing-10edc7b1.mov" type='video/mp4; codecs="hvc1"' />
-                <source src="https://assets.masko.ai/989154/pity-deb3/dancing-e2c9c0f3.webm" type="video/webm" />
-              </video>
-            </div>
-          </div>
-        </section>
-
-        {/* 8. Админ-панель */}
-        <FeatureSection
-          title="8. Админ-панель"
-          imageSrc="/cases/bonaqa-admin.png"
-          imageAlt="bonaqa — админ-панель"
-          onOpen={lightbox.open}
-          reverse
-        >
-          <ul className="cd-feature__list">
-            <li><strong>Управление курсами:</strong> CRUD, импорт из JSON, публикация/скрытие</li>
-            <li><strong>Блоки и уроки:</strong> drag-and-drop переупорядочивание, атомарные транзакции</li>
-            <li><strong>Упражнения:</strong> создание 4 типов с настройкой критериев AI-проверки</li>
-            <li><strong>Пользователи:</strong> поиск, фильтрация, управление подписками (monthly/yearly/lifetime)</li>
-            <li><strong>Ролевая модель:</strong> admin / superadmin</li>
-            <li><strong>Импорт курсов из JSON</strong> — один файл разворачивается в полную структуру в одной транзакции</li>
           </ul>
         </FeatureSection>
 
@@ -341,29 +296,8 @@ export default function BonaqaDetailPage({
             <div className="cd-highlight">
               <span className="cd-highlight__number">03</span>
               <div>
-                <h4>Practice API с Swagger</h4>
-                <p>Полноценный REST API книжного магазина с валидацией, пагинацией, конфликтами — мишень для практики API-автоматизации</p>
-              </div>
-            </div>
-            <div className="cd-highlight">
-              <span className="cd-highlight__number">04</span>
-              <div>
-                <h4>Импорт курсов из JSON</h4>
-                <p>Один файл разворачивается в полную структуру (курс → блоки → уроки → упражнения → квизы) в одной транзакции</p>
-              </div>
-            </div>
-            <div className="cd-highlight">
-              <span className="cd-highlight__number">05</span>
-              <div>
-                <h4>Дневные квесты с рандомизацией</h4>
-                <p>Каждый день 3 случайных квеста разной сложности из шаблонов + бонус за полное выполнение</p>
-              </div>
-            </div>
-            <div className="cd-highlight">
-              <span className="cd-highlight__number">06</span>
-              <div>
-                <h4>Контекстный маскот</h4>
-                <p>Bonnie реагирует на действия: радуется, грустит, празднует — создаёт эмоциональную связь с платформой</p>
+                <h4>Геймификация с лигами</h4>
+                <p>XP, 10 уровней, лидерборд с 6 лигами, дневные квесты, combo-система и достижения — мотивация через соревнование</p>
               </div>
             </div>
           </div>
@@ -399,28 +333,10 @@ export default function BonaqaDetailPage({
         </section>
 
         {/* ══════════════════════════════════════
-            СРАВНЕНИЕ
+            О ПРОЕКТЕ — ЛИЧНАЯ ЗАМЕТКА
            ══════════════════════════════════════ */}
         <section className="cd-section fade-up">
-          <h2 className="cd-section__title">Стоимость и сроки</h2>
-          <div className="cd-compare" style={{ maxWidth: 560, margin: '0 auto' }}>
-            <div className="cd-compare__col cd-compare__col--old">
-              <span className="cd-compare__label">Студия / фриланс</span>
-              <span className="cd-compare__val">{caseData.compare.freelance.time}</span>
-              <span className="cd-compare__val">{caseData.compare.freelance.price}</span>
-            </div>
-            <div className="cd-compare__col cd-compare__col--new">
-              <span className="cd-compare__label">Я + ИИ</span>
-              <span className="cd-compare__val">{caseData.compare.ai.time}</span>
-              <span className="cd-compare__val">{caseData.compare.ai.price}</span>
-            </div>
-          </div>
-        </section>
-
-        {/* ══════════════════════════════════════
-            ОТЗЫВ
-           ══════════════════════════════════════ */}
-        <section className="cd-section fade-up">
+          <h2 className="cd-section__title">Об этом проекте</h2>
           <div className="cd-quote">
             <p className="cd-quote__text">{caseData.quote.text}</p>
             <span className="cd-quote__author">{caseData.quote.author}</span>
@@ -433,15 +349,24 @@ export default function BonaqaDetailPage({
         <div className="cd-cta fade-up">
           <h2 className="cd-cta__title">{caseData.cta.title}</h2>
           <p className="cd-cta__text">{caseData.cta.text}</p>
-          <a
-            href="https://t.me/Neznayuusername"
-            target="_blank"
-            rel="noopener"
-            className="btn btn--primary btn--lg"
-          >
-            <TelegramIcon />
-            Написать в Telegram
-          </a>
+          <div className="cd-cta__buttons">
+            <a
+              href="https://t.me/Neznayuusername"
+              target="_blank"
+              rel="noopener"
+              className="btn btn--primary btn--lg"
+            >
+              <TelegramIcon />
+              Написать в Telegram
+            </a>
+            <a
+              href="mailto:obojealexanderwork@gmail.com"
+              className="btn btn--ghost btn--lg"
+            >
+              <EmailIcon />
+              Написать на Email
+            </a>
+          </div>
         </div>
 
         {/* ── Nav ── */}

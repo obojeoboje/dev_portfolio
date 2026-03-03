@@ -11,6 +11,13 @@ const TelegramIcon = () => (
   </svg>
 );
 
+const EmailIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="4" width="20" height="16" rx="2" />
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+  </svg>
+);
+
 const BackIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M19 12H5" />
@@ -45,14 +52,21 @@ export default function CasePageContent({
         {/* Hero */}
         <section className="cd-hero">
           <span className="cd-hero__badge fade-up">{caseData.category}</span>
-          {caseData.detailedCase && (
+          {caseData.demoProject ? (
+            <span
+              className="cd-detailed-badge cd-detailed-badge--demo fade-up"
+              data-tooltip="Проект разработан для демонстрации навыков и стека технологий"
+            >
+              Демо-проект
+            </span>
+          ) : caseData.detailedCase ? (
             <span
               className="cd-detailed-badge fade-up"
               data-tooltip="Владелец проекта дал разрешение раскрывать подробности"
             >
               Подробный кейс
             </span>
-          )}
+          ) : null}
           <h1 className="cd-hero__title fade-up">{caseData.title}</h1>
           <p className="cd-hero__subtitle fade-up">{caseData.subtitle}</p>
 
@@ -75,6 +89,9 @@ export default function CasePageContent({
           />
 
           <div className="cd-compare fade-up">
+            {caseData.demoProject && (
+              <span className="cd-compare__estimate-label">Оценочное сравнение</span>
+            )}
             <div className="cd-compare__col cd-compare__col--old">
               <span className="cd-compare__label">Фриланс</span>
               <span className="cd-compare__val">{caseData.compare.freelance.time}</span>
@@ -85,6 +102,9 @@ export default function CasePageContent({
               <span className="cd-compare__val">{caseData.compare.ai.time}</span>
               <span className="cd-compare__val">{caseData.compare.ai.price}</span>
             </div>
+            {caseData.compareSource && (
+              <span className="cd-compare__source">{caseData.compareSource}</span>
+            )}
           </div>
         </section>
 
@@ -123,39 +143,66 @@ export default function CasePageContent({
 
         {/* Результаты */}
         <section className="cd-section fade-up">
-          <h2 className="cd-section__title">Результаты</h2>
+          <h2 className="cd-section__title">
+            {caseData.demoProject ? 'Что реализовано' : 'Результаты'}
+          </h2>
 
-          <div className="cd-metrics">
-            {caseData.results.map((r, i) => (
-              <div className="cd-metric" key={i}>
-                <div className="cd-metric__value">{r.value}</div>
-                <div
-                  className="cd-metric__label"
-                  dangerouslySetInnerHTML={{ __html: r.label.replace(/\n/g, '<br/>') }}
-                />
-              </div>
-            ))}
-          </div>
+          {caseData.demoProject ? (
+            <div className="cd-features-list">
+              {caseData.results.map((r, i) => (
+                <div className="cd-features-list__item" key={i}>
+                  <span className="cd-features-list__tag">{r.value}</span>
+                  <span
+                    className="cd-features-list__desc"
+                    dangerouslySetInnerHTML={{ __html: r.label.replace(/\n/g, ' ') }}
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="cd-metrics">
+              {caseData.results.map((r, i) => (
+                <div className="cd-metric" key={i}>
+                  <div className="cd-metric__value">{r.value}</div>
+                  <div
+                    className="cd-metric__label"
+                    dangerouslySetInnerHTML={{ __html: r.label.replace(/\n/g, '<br/>') }}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
 
-          <div className="cd-quote fade-up">
-            <p className="cd-quote__text">{caseData.quote.text}</p>
-            <span className="cd-quote__author">{caseData.quote.author}</span>
-          </div>
+          {!caseData.demoProject && (
+            <div className="cd-quote fade-up">
+              <p className="cd-quote__text">{caseData.quote.text}</p>
+              <span className="cd-quote__author">{caseData.quote.author}</span>
+            </div>
+          )}
         </section>
 
         {/* CTA */}
         <div className="cd-cta fade-up">
           <h2 className="cd-cta__title">{caseData.cta.title}</h2>
           <p className="cd-cta__text">{caseData.cta.text}</p>
-          <a
-            href="https://t.me/Neznayuusername"
-            target="_blank"
-            rel="noopener"
-            className="btn btn--primary btn--lg"
-          >
-            <TelegramIcon />
-            Написать в Telegram
-          </a>
+          <div className="cd-cta__buttons">
+            <a
+              href="https://t.me/Neznayuusername"
+              target="_blank"
+              rel="noopener"
+              className="btn btn--primary btn--lg"
+            >
+              <TelegramIcon />
+              Написать в Telegram
+            </a>
+            <a
+              href="mailto:obojealexanderwork@gmail.com"
+              className="btn btn--ghost btn--lg"
+            >
+              <EmailIcon />
+              Написать на Email
+            </a>
+          </div>
         </div>
 
         {/* Nav */}

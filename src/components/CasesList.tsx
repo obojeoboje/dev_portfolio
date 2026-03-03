@@ -6,7 +6,7 @@ export default function CasesList() {
     <section className="cases" id="cases">
       <div className="container">
         <h2 className="section-title fade-up">Кейсы</h2>
-        <p className="section-subtitle fade-up">Проекты, которые решили реальные задачи бизнеса</p>
+        <p className="section-subtitle fade-up">Собственные и демо-проекты: от идеи до работающего решения</p>
 
         <div className="cases__grid">
           {cases.map((c) => (
