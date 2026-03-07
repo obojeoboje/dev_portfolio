@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/_next/static/', '/demos/'],
+      disallow: ['/_next/static/'],
     },
-    sitemap: 'https://privalov.dev/sitemap.xml',
+    sitemap: 'https://oboje.dev/sitemap.xml',
   };
 }

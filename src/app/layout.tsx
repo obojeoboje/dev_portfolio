@@ -14,26 +14,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://privalov.dev'),
+  metadataBase: new URL('https://oboje.dev'),
   title: {
-    default: 'Разработка сайтов, ботов и автоматизации с ИИ — Привалов',
-    template: '%s — Привалов',
+    default: 'oboje.dev — строю продукты с AI, делюсь процессом',
+    template: '%s — oboje.dev',
   },
   description:
-    'Разработка Telegram-ботов, сайтов и автоматизации с ИИ. Делаю за дни то, на что другим нужны месяцы. Кейсы с результатами.',
+    'Developer-creator. Строю свои продукты с нейросетями параллельно с наймом. Build in public: цифры, код, факапы — всё открыто.',
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
     type: 'website',
     locale: 'ru_RU',
-    siteName: 'Привалов — Разработка с ИИ',
+    siteName: 'oboje.dev',
     images: [
       {
-        url: '/hero-bg.png',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Привалов — Разработка сайтов, ботов и автоматизации с ИИ',
+        alt: 'oboje.dev — строю продукты с AI',
       },
     ],
   },
@@ -42,39 +42,26 @@ export const metadata: Metadata = {
   },
 };
 
-const organizationJsonLd = {
+const personJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'Привалов — Разработка с ИИ',
-  url: 'https://privalov.dev',
+  '@type': 'Person',
+  name: 'obojedev',
+  url: 'https://oboje.dev',
   description:
-    'Разработка Telegram-ботов, сайтов и автоматизации с использованием нейросетей. Быстрее. Качественнее. Любой сложности.',
-  logo: 'https://privalov.dev/favicon.svg',
-  contactPoint: [
-    {
-      '@type': 'ContactPoint',
-      contactType: 'customer service',
-      url: 'https://t.me/Neznayuusername',
-    },
+    'Developer-creator. Строю продукты с AI, делюсь процессом открыто.',
+  sameAs: [
+    'https://www.threads.net/@obojedev',
+    'https://instagram.com/obojedev',
+    'https://t.me/obojedev',
   ],
-  sameAs: ['https://t.me/Neznayuusername'],
-  areaServed: {
-    '@type': 'Country',
-    name: 'Russia',
-  },
-  priceRange: '$$',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru" className={inter.className}>
       <head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-        />
         <script type="application/ld+json">
-          {JSON.stringify(organizationJsonLd)}
+          {JSON.stringify(personJsonLd)}
         </script>
       </head>
       <body>

@@ -1,37 +1,33 @@
 export default function Hero() {
   return (
-    <section className="hero" id="hero">
+    <section className="hero hero--centered" id="hero">
       <div className="hero__grid-bg"></div>
       <div className="hero__glow"></div>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/hero-bg.png"
-        alt=""
-        aria-hidden="true"
-        className="hero__visual-bg"
-      />
       <div className="container hero__inner">
         <div className="hero__content">
-          <p className="hero__tag fade-up">Fullstack-разработчик &middot; ИИ-интеграции</p>
+          <p className="hero__tag fade-up">developer &middot; builder &middot; build&nbsp;in&nbsp;public</p>
           <h1 className="hero__title fade-up">
-            Александр<br />Привалов
+            oboje<span className="accent">.</span>dev
           </h1>
           <p className="hero__subtitle fade-up">
-            Разрабатываю с&nbsp;ИИ. <span className="accent">Быстрее.</span> Качественнее. Любой&nbsp;сложности.
+            Строю продукты с&nbsp;AI. <span className="accent">Один.</span> По&nbsp;вечерам.
           </p>
           <p className="hero__description fade-up">
-            Использую нейросети на каждом этапе разработки&nbsp;- от&nbsp;проектирования до&nbsp;тестирования.
-            Это позволяет создавать продукты <strong>в&nbsp;2&ndash;3 раза быстрее</strong> без потери качества.
-            Боты, сайты, автоматизация&nbsp;- любая задача.
+            Работаю в&nbsp;найме, параллельно шиппю свои проекты с&nbsp;нейросетями.
+            Один человек&nbsp;+ AI&nbsp;= целая продуктовая команда <em>(ну, почти)</em>.
+            Весь процесс открыто: цифры, код, факапы&nbsp;&mdash; всё как&nbsp;есть.
           </p>
           <div className="hero__actions fade-up">
-            <a href="#contacts" className="btn btn--primary">Обсудить проект</a>
-            <a href="/cases" className="btn btn--ghost">Смотреть кейсы</a>
+            <a href="#projects" className="btn btn--primary">Что строю</a>
+            <a
+              href="https://www.threads.net/@obojedev"
+              target="_blank"
+              rel="noopener"
+              className="btn btn--ghost"
+            >
+              Threads &rarr;
+            </a>
           </div>
-        </div>
-        <div className="hero__photo fade-up">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/hero-photo.png" alt="Александр Привалов" />
         </div>
       </div>
     </section>

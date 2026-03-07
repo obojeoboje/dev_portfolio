@@ -2,13 +2,10 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const pathname = usePathname();
-  const isHome = pathname === '/';
 
   useEffect(() => {
     function onScroll() {
@@ -32,7 +29,6 @@ export default function Nav() {
     });
   }, []);
 
-  // Close menu on outside click
   useEffect(() => {
     if (!menuOpen) return;
     function handleClick(e: MouseEvent) {
@@ -45,32 +41,22 @@ export default function Nav() {
     return () => document.removeEventListener('click', handleClick);
   }, [menuOpen, closeMenu]);
 
-  const navLinks = isHome
-    ? [
-        { href: '#services', label: 'Услуги' },
-        { href: '/cases', label: 'Кейсы' },
-        { href: '#pricing', label: 'Цены' },
-        { href: '#process', label: 'Как работаю' },
-      ]
-    : [
-        { href: '/#services', label: 'Услуги' },
-        { href: '/cases', label: 'Кейсы' },
-        { href: '/#pricing', label: 'Цены' },
-        { href: '/#process', label: 'Как работаю' },
-      ];
-
-  const ctaHref = isHome ? '#contacts' : '/#contacts';
+  const navLinks = [
+    { href: '#projects', label: 'Проекты' },
+    { href: '#about', label: 'Обо мне' },
+    { href: '#connect', label: 'Связь' },
+  ];
 
   return (
     <nav className={`nav${scrolled ? ' nav--scrolled' : ''}`} id="nav">
       <div className="nav__container">
-        <Link href={isHome ? '#hero' : '/'} className="nav__logo">
-          AP<span className="accent">.</span>
+        <Link href="#hero" className="nav__logo">
+          ob<span className="accent">.</span>
         </Link>
         <button
           className={`nav__burger${menuOpen ? ' active' : ''}`}
           onClick={toggleMenu}
-          aria-label="Меню"
+          aria-label="Menu"
         >
           <span></span>
           <span></span>
@@ -85,9 +71,15 @@ export default function Nav() {
             </li>
           ))}
           <li>
-            <Link href={ctaHref} className="nav__cta" onClick={closeMenu}>
-              Написать
-            </Link>
+            <a
+              href="https://www.threads.net/@obojedev"
+              target="_blank"
+              rel="noopener"
+              className="nav__cta"
+              onClick={closeMenu}
+            >
+              Threads
+            </a>
           </li>
         </ul>
       </div>
